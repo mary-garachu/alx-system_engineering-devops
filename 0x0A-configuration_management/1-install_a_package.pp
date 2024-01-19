@@ -1,12 +1,5 @@
-# Ensure pip is installed
-package { 'python3-pip':
-  ensure => installed,
-}
-
-# Using Puppet, install flask
+# installs flask
 package { 'flask':
-  ensure          =>  'installed',
-  install_options =>  ['-v', '2.1.1'],
+  ensure   => '2.1.0',
   provider => 'pip3',
-  require => Package['python3-pip'],
 }
